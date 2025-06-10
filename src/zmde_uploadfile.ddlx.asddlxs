@@ -1,0 +1,51 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo: {
+    typeName: 'Upload File',
+    typeNamePlural: 'Uploadfiles',
+    title: {
+        type: #STANDARD,
+        label: 'Uploadfile',
+        value: 'Id'
+    },
+    description: {
+        type: #STANDARD,
+        label: 'Uploadfile'
+    }
+}
+annotate entity ZC_STD_UPLOADFILE with
+{
+  @UI.facet: [{
+      id: 'Uploadas',
+      purpose: #STANDARD,
+      position: 10,
+      label: 'Uploadfiles',
+      type: #IDENTIFICATION_REFERENCE
+
+  }]
+
+  @UI.hidden: true
+  Id;
+  @UI.lineItem: [{ position: 10, label: 'Placed Company' }]
+  @UI.identification: [{ position: 10, label: 'Placed Company' }]
+  Placecompany;
+  @UI.lineItem: [{ position: 20, label: 'Placed Project' }]
+  @UI.identification: [{ position: 20, label: 'Placed Project' }]
+  Project;
+  @UI.lineItem: [{ position: 30, label: 'Placed Task' }]
+  @UI.identification: [{ position: 30, label: 'Placed Task' }]
+  Fresult;
+  @UI.hidden: true
+  Lastchangedat;
+  @UI.lineItem: [{ position: 40, label: 'Attachded Doc Type'  }]
+  @UI.identification: [{ position: 40, label: 'Attachded Doc Type' }]
+  DocAttcahment;
+  @UI.lineItem: [{ position: 50, label: 'MIMETYPE' }]
+  @UI.identification: [{ position: 50, label: 'MIMETYPE' }]
+  Mimetype;
+  @UI.lineItem: [{ position: 60, label: 'Filename' }]
+  @UI.identification: [{ position: 60, label: 'Filename' }]
+  Filename;
+  //  /* Associations */
+  //  _student;
+
+}

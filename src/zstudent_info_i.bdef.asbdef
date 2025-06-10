@@ -1,0 +1,55 @@
+managed implementation in class zbp_student_info_i unique;
+strict ( 2 );
+
+define behavior for zstudent_info_i alias Student
+persistent table zstudent_table_i
+lock master
+authorization master ( global, instance )
+//etag master <field_name>
+{
+  create;
+  update ( precheck);
+  delete;
+  field ( numbering : managed, readonly ) Id;
+  action ( features : instance ) SetAdmitted result[1] $self;
+  association _upload { create; }
+
+  mapping for zstudent_table_i
+    {
+      id         = id;
+      Firstname  = Firstname;
+      lastname   = Lastname;
+      Studentage = Studentage;
+      Cource     = Cource;
+      Duration   = Duration;
+      status     = status;
+      Gender     = gender;
+      Dob        = Dob;
+    }
+
+}
+
+define behavior for zstudent_uploadfile alias upload
+persistent table zstudent_uploads
+lock dependent by _student
+authorization dependent by _student
+
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Id;
+  association _student;
+
+  mapping for zstudent_uploads
+    {
+      id            = id;
+      Placecompany  = placecompany;
+      DocAttcahment = doc_attcahment;
+      Project       = project;
+      Lastchangedat = lastchangedat;
+      Fresult       = fresult;
+      Mimetype      = mimetype;
+      Filename      = filename;
+    }
+}

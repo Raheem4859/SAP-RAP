@@ -1,0 +1,57 @@
+@Metadata.layer: #PARTNER
+@UI:{ headerInfo: {
+    typeName: 'Student',
+    typeNamePlural: 'Students',
+    title: {
+        type: #STANDARD,
+        value: 'Id'
+    }
+} }
+annotate entity ZC_STUDENT_PRO with
+{
+  @UI.facet: [{
+  id: 'Student',
+  label: 'Student Details',
+  position: 10,
+  type: #IDENTIFICATION_REFERENCE
+   },
+   {
+  id: 'Uploadas',
+  purpose: #STANDARD,
+  label: 'Student Details Upload',
+  position: 20,
+  type: #LINEITEM_REFERENCE,
+  targetElement: '_Upload'
+   } ]
+
+  @UI.lineItem: [{ position: 10, label: 'Student Id' }]
+  @UI.identification: [{ position: 10, label: 'Student Id' }]
+  Id;
+  @UI.lineItem: [{ position: 20, label: 'Firstname' }]
+  @UI.identification: [{ position: 20, label: 'Firstname' }]
+  @UI.selectionField: [{ position: 10 }]
+  Firstname;
+  @UI.lineItem: [{ position: 30, label: 'Lastname' }]
+  @UI.identification: [{ position: 30, label: 'Lastname' }]
+  Lastname;
+  @UI.lineItem: [{ position: 40, label: 'Studentage' }]
+  @UI.identification: [{ position: 40, label: 'Studentage' }]
+  Studentage;
+  @UI.lineItem: [{ position: 50, label: 'Cource' }]
+  @UI.identification: [{ position: 50, label: 'Cource' }]
+  @UI.selectionField: [{ position: 20 }]
+  Cource;
+  @UI.lineItem: [{ position: 60, label: 'Duration' }]
+  @UI.identification: [{ position: 60, label: 'Duration' }]
+  Duration;
+  @UI.lineItem: [{ position: 70, label: 'Status' }]
+  @UI.identification: [{ position: 70, label: 'Status' }]
+  Status;
+  @UI.lineItem: [{ position: 80, label: 'Gender' }]
+  @UI.identification: [{ position: 80, label: 'Gender' }]
+  Gender;
+  @UI.lineItem: [{ position: 90, label: 'Dob' }]
+  @UI.identification: [{ position: 90, label: 'Dob' }]
+  Dob;
+
+}

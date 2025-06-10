@@ -1,0 +1,138 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.imageUrl: 'ThumbnailUrl'
+@UI.headerInfo.title.value: 'Title'
+annotate view ZC_VIDEOS with
+{
+  @EndUserText.label: 'VideoId'
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 ,
+    label: 'VideoId'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 ,
+    label: 'VideoId'
+  } ]
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+  @UI.hidden: true
+  VideoId;
+  @UI.lineItem: [ {
+    position: 5 ,
+    importance: #MEDIUM,
+    label: ' ',
+    cssDefault.width: '5em'
+  } ]
+  ThumbnailUrl;
+
+  @EndUserText.label: 'Title'
+  @UI.identification: [ {
+    position: 20 ,
+    label: 'Title'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 ,
+    label: 'Title'
+  } ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  Title;
+
+  @EndUserText.label: 'Url'
+  @UI.identification: [ {
+    position: 45 ,
+    label: 'Url'
+  } ]
+  @UI.lineItem: [ {
+    position: 45 ,
+    type: #WITH_URL,
+    url: 'Url'
+  } ]
+  @UI.selectionField: [ {
+    position: 45
+  } ]
+  Url;
+
+  @EndUserText.label: 'Description'
+  @UI.identification: [ {
+    position: 40 ,
+    label: 'Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 ,
+    label: 'Description'
+  } ]
+  @UI.selectionField: [ {
+    position: 40
+  } ]
+  Description;
+
+  @UI.identification: [ {
+    position: 50
+  } ]
+  @UI.lineItem: [ {
+    position: 50
+  } ]
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+  @UI.hidden: true
+  LocalCreatedBy;
+
+  @UI.identification: [ {
+    position: 60
+  } ]
+  @UI.lineItem: [ {
+    position: 60
+  } ]
+  @UI.selectionField: [ {
+    position: 60
+  } ]
+  @UI.hidden: true
+  LocalCreatedAt;
+
+  @UI.identification: [ {
+    position: 70
+  } ]
+  @UI.lineItem: [ {
+    position: 70
+  } ]
+  @UI.selectionField: [ {
+    position: 70
+  } ]
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  @UI.identification: [ {
+    position: 80
+  } ]
+  @UI.lineItem: [ {
+    position: 80
+  } ]
+  @UI.selectionField: [ {
+    position: 80
+  } ]
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+  @UI.identification: [ {
+    position: 90
+  } ]
+  @UI.lineItem: [ {
+    position: 90
+  } ]
+  @UI.selectionField: [ {
+    position: 90
+  } ]
+  @UI.hidden: true
+  LastChangedAt;
+}

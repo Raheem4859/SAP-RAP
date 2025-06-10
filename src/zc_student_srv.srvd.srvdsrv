@@ -1,0 +1,5 @@
+@EndUserText.label: 'Student service defination'
+define service ZC_STUDENT_SRV {
+  expose ZC_STUDENT_PRO    as Student;
+  expose ZC_STD_UPLOADFILE as upload;
+}
